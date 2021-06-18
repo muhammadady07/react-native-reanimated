@@ -9,12 +9,12 @@ global.__reanimatedWorkletInit = function (worklet) {
   worklet.__worklet = true;
 };
 
-if (global._setGlobalConsole === undefined) {
-  // it can happen when Reanimated plugin wasn't added, but the user uses the only API from version 1
-  global._setGlobalConsole = () => {
-    // noop
-  };
-}
+// if (global._setGlobalConsole === undefined) {
+//   // it can happen when Reanimated plugin wasn't added, but the user uses the only API from version 1
+//   global._setGlobalConsole = () => {
+//     // noop
+//   };
+// }
 
 const testWorklet = () => {
   'worklet';
@@ -324,6 +324,6 @@ if (!NativeReanimated.useOnlyV1) {
         error: runOnJS(capturableConsole.error),
         info: runOnJS(capturableConsole.info),
       };
-      _setGlobalConsole(console);
+      // _setGlobalConsole(console);
     })();
 }
